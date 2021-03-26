@@ -53,7 +53,7 @@ public class DaoMongo {
         }
     }
 
-    public void insertDocumentsInCollection(String collectionName, List<Document> documents){
+    public void insertDocumentsInCollection( String collectionName, List<Document> documents){
         try {
             try {
                 createConnection();
@@ -65,7 +65,7 @@ public class DaoMongo {
             MongoCollection<Document> collection = mongoDatabase.getCollection(collectionName);
             collection.insertMany(documents);
             closeConnection();
-        }catch (Exception e){
+        }catch ( Exception e){
             throw new CustomException( e.toString());
         }
     }
