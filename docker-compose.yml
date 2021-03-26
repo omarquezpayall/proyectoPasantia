@@ -8,7 +8,7 @@ services:
       - backend
 
   mongodb:
-    image: mongo
+    image: mongo:4.2
     restart: always
     ports:
       - "27018:27017"
