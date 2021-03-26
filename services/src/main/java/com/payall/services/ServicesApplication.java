@@ -12,11 +12,19 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-@SpringBootApplication(scanBasePackages = "com.payall")
+@SpringBootApplication(
+		scanBasePackages = {
+				"com.payall.Requets",
+				"com.payall.logic",
+				"com.payall.Serializers",
+				"com.payall.dataaccess",
+				"com.payall.exceptions"
+		}
+)
 @RestController
 public class ServicesApplication {
 
-	private static final Logger LOGGER= LoggerFactory.getLogger(ServicesApplication.class);
+	private static final Logger LOGGER= LoggerFactory.getLogger( ServicesApplication.class);
 
 	@PostMapping("/migrate")
 	public ResponseSerializer migrateMySqlToMongo(@RequestBody MigrateRequest migrateRequest) {

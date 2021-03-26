@@ -2,25 +2,7 @@ version: "3.9"
 services:
   spring-api:
     build: .
-    ports:
-      - "8080:8080"
-    networks:
-      - backend
-
-  mongodb:
-    image: mongo:4.2
-    restart: always
-    ports:
-      - "27018:27017"
-    volumes:
-      - mongodata:/data/db
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: root
-    networks:
-      - backend
+    network_mode: host
 
 networks:
   backend:
-volumes:
-  mongodata:

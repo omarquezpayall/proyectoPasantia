@@ -26,10 +26,10 @@ public class DaoMysql {
 
     public void createConnection() throws ClassNotFoundException, SQLException, InstantiationException, IllegalAccessException {
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
+            Class.forName( "com.mysql.cj.jdbc.Driver").newInstance();
             connection = DriverManager.getConnection(
                     "jdbc:mysql://"+ hostname+ ":"+port+"/"+database+"?" +"user="+username+"&password="+password);
-        } catch (SQLException e) {
+        } catch ( SQLException e) {
             throw new CustomException( e.toString());
         }
     }
@@ -39,7 +39,7 @@ public class DaoMysql {
             try {
                 connection.close();
                 connection = null;
-            } catch (SQLException sqlex) {
+            } catch ( SQLException sqlex) {
                 throw new CustomException( sqlex.toString());
             }
         }
@@ -52,11 +52,9 @@ public class DaoMysql {
             createConnection();
             statement = connection.createStatement();
             result = statement.executeQuery("SELECT * FROM " + tableName);
-        } catch (SQLException e) {
+        } catch ( SQLException e) {
             // LOGGER.error( e.toString());
             throw new CustomException( e.toString());
-        }finally {
-            closeConnection();
         }
         return result;
     }

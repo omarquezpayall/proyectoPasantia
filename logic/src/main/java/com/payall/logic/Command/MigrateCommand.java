@@ -61,15 +61,16 @@ public class MigrateCommand implements GeneralCommand{
                     count++;
 
                 }
-                daoMongo.insertDocumentsInCollection(this.tableToMigrate, documents);
-                this.response.setRowsCount(count);
-                this.response.setStatus(200);
-                this.response.setTableMigrated(this.tableToMigrate);
-                this.response.setMessage("Se ha completado la migracion con exito");
+                daoMongo.insertDocumentsInCollection( this.tableToMigrate, documents);
+                this.response.setRowsCount( count);
+                this.response.setStatus( 200);
+                this.response.setTableMigrated( this.tableToMigrate);
+                this.response.setMessage( "Se ha completado la migracion con exito");
+                daoMysql.closeConnection();
             }
         }catch (CustomException customException) {
             LOGGER.error( customException.toString());
-            this.response.setMessage(customException.getMessage());
+            this.response.setMessage( customException.getMessage());
             this.response.setStatus( 400);
         }catch(Exception e){
             LOGGER.error( e.toString());
