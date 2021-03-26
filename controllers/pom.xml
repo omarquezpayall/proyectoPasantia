@@ -9,10 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.payall</groupId>
-	<artifactId>logic</artifactId>
+	<artifactId>controllers</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>logic</name>
-	<description>Demo project for Spring Boot</description>
+	<name>controllers</name>
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
@@ -27,17 +26,6 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-        <dependency>
-            <groupId>com.payall</groupId>
-            <artifactId>controllers</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-            <scope>compile</scope>
-        </dependency>
-		<dependency>
-			<groupId>com.payall</groupId>
-			<artifactId>data-access</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-    </dependencies>
+	</dependencies>
 
 </project>

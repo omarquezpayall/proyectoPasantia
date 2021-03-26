@@ -11,9 +11,9 @@
     <modules>
         <module>data-access</module>
         <module>services</module>
-        <module>dtos</module>
-        <module>entity</module>
+        <module>controllers</module>
         <module>logic</module>
+        <module>exceptions</module>
     </modules>
 
 </project>
